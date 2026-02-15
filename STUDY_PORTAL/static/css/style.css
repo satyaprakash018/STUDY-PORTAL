@@ -1,0 +1,284 @@
+/* =====================================================
+   MOBILE-FIRST BASE STYLES
+===================================================== */
+
+/* Base font & spacing optimized for mobile */
+body {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Containers tighter on mobile */
+.container {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+/* Cards full-width on mobile */
+.card {
+    margin-bottom: 16px;
+}
+
+/* Buttons bigger for touch */
+.btn {
+    padding: 10px 22px;
+    font-size: 15px;
+}
+
+/* Headings smaller on mobile */
+h2 {
+    font-size: 1.4rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+
+/* =====================================================
+   GLOBAL THEME VARIABLES
+===================================================== */
+:root {
+    --primary: #4e73df;
+    --primary-dark: #224abe;
+    --success: #1cc88a;
+    --success-dark: #13855c;
+    --warning: #f6c23e;
+    --warning-dark: #dda20a;
+    --dark: #212529;
+    --light-bg: #f4f6f9;
+    --card-bg: #ffffff;
+    --radius: 16px;
+    --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(120deg, #f4f6f9, #eef2f7);
+    color: #212529;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+    border-radius: 0 0 14px 14px;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.card {
+    background: var(--card-bg);
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn {
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success), var(--success-dark));
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--warning), var(--warning-dark));
+    border: none;
+    color: #212529;
+}
+
+/* =====================================================
+   ICONS
+===================================================== */
+.bi {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .bi {
+    transform: scale(1.15);
+}
+
+/* =====================================================
+   ALERTS
+===================================================== */
+.alert {
+    border-radius: 14px;
+}
+
+/* =====================================================
+   TABLE (STUDY MATERIALS)
+===================================================== */
+.table {
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f5ff;
+}
+
+/* =====================================================
+   BADGES (ADMIN)
+===================================================== */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+/* =====================================================
+   PAGE FADE ANIMATION
+===================================================== */
+.fade-in {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+    border-radius: 16px 16px 0 0;
+    font-size: 14px;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .navbar .btn {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+}
+
+/* =====================================================
+   SCROLL ANIMATIONS
+===================================================== */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* =====================================================
+   BACK TO MATERIALS BUTTON (PREVIEW PAGE)
+===================================================== */
+.back-btn {
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(78, 115, 223, 0.4);
+}
+
+.back-btn:hover {
+    color: #fff;
+    transform: translateX(-4px);
+    box-shadow: 0 10px 25px rgba(78, 115, 223, 0.6);
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================
+   ADMIN UPLOAD EQUAL HEIGHT FIX
+================================ */
+
+.admin-upload-card {
+    height: 100%;
+    min-height: 520px;      /* same frame height */
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-upload-form {
+    flex: 1;
+    overflow-y: auto;       /* internal scroll if needed */
+    padding-right: 4px;
+}
+
+/* Optional: nicer scrollbar */
+.admin-upload-form::-webkit-scrollbar {
+    width: 6px;
+}
+.admin-upload-form::-webkit-scrollbar-thumb {
+    background: #ced4da;
+    border-radius: 10px;
+}
+
+
+
+/* =====================================================
+   DESKTOP & TABLET ENHANCEMENTS
+===================================================== */
+@media (min-width: 768px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
